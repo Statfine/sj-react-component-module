@@ -42,5 +42,6 @@
 <dl>
 <dd>install sj-react-component-module --save</dd>
 <dd>import { InputSearchCom } from 'sj-react-component-module';</dd>
-<dd><InputSearchCom value={'here'} placeholder="搜搜" onSearch={(value) => alert(value)} /></dd>
+<br />
+<InputSearchCom value={'here'} placeholder="搜搜" onSearch={(value) => alert(value)} />
 </dl>
