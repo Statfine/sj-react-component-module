@@ -7,8 +7,8 @@
 <dd>npm publish</dd>
 </dl>
 
-- 1. npm install
-- 2. npm start
+- * 1. npm install
+- * 2. npm start
 
 <dl>
 <dd>build  为打包后的组件文件</dd>
@@ -43,5 +43,5 @@
 <dd>install sj-react-component-module --save</dd>
 <dd>import { InputSearchCom } from 'sj-react-component-module';</dd>
 <br />
-<InputSearchCom value={'here'} placeholder="搜搜" onSearch={(value) => alert(value)} />
+InputSearchCom value={'here'} placeholder="搜搜" onSearch={(value) => alert(value)}
 </dl>
