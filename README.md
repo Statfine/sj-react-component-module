@@ -1,5 +1,5 @@
 项目生成第三方包sj-react-component-module
-```
+
 <dl>
 <dt>代码做线上打包发布到npm</dt>
 <dd>npm publish</dd>
@@ -16,7 +16,7 @@
 
 
 基于react-boilerplate项目
-```
+
 <dl>
 <dt>package</dt>
 <dd>注释掉了 "postinstall": "npm run build:dll"， 添加了"prepublish": "npm run build",</dd>
@@ -35,7 +35,7 @@
 
 
 发布（发布前自动打包）之后使用改组件：
-```
+
 <dl>
 <dt>install sj-react-component-module --save</dt>
 <dt>import { InputSearchCom } from 'sj-react-component-module';</dt>
