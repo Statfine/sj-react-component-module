@@ -1,19 +1,22 @@
-项目生成第三方包sj-react-component-module
+## 项目生成第三方包sj-react-component-module
+
+<br />
 
 <dl>
 <dt>代码做线上打包发布到npm</dt>
 <dd>npm publish</dd>
 </dl>
 
-- *1. npm install
-- *2. npm start
+- 1. npm install
+- 2. npm start
 
 <dl>
-<dt>build  为打包后的组件文件</dt>
-<dt>bin    为打包组件 用于n生成build文件</dt>
-<dt>app    用户测试组件</dt>
+<dd>build  为打包后的组件文件</dd>
+<dd>bin    为打包组件 用于n生成build文件</dd>
+<dd>app    用户测试组件</dd>
 </dl>
 
+<br />
 
 基于react-boilerplate项目
 
@@ -33,11 +36,11 @@
 <dd>libraryTarget: 'umd',  // 组件名称</dd>
 </dl>
 
+<br />
 
 发布（发布前自动打包）之后使用改组件：
-
 <dl>
-<dt>install sj-react-component-module --save</dt>
-<dt>import { InputSearchCom } from 'sj-react-component-module';</dt>
-<dt><InputSearchCom value={'here'} placeholder="搜搜" onSearch={(value) => alert(value)} /></dt>
+<dd>install sj-react-component-module --save</dd>
+<dd>import { InputSearchCom } from 'sj-react-component-module';</dd>
+<dd><InputSearchCom value={'here'} placeholder="搜搜" onSearch={(value) => alert(value)} /></dd>
 </dl>
