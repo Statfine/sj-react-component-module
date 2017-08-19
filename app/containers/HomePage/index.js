@@ -10,14 +10,15 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+// import { HelloWord, InputSearchCom } from '../../../bin';
+import { HelloWord, InputSearchCom } from '../../../build/bundle';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <h1>
-        <FormattedMessage {...messages.header} />
+        <HelloWord />
+        <InputSearchCom value={'here'} placeholder="搜搜" onSearch={(value) => alert(value)} />
       </h1>
     );
   }
