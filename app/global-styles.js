@@ -17,14 +17,46 @@ injectGlobal`
   }
 
   #app {
-    background-color: #fafafa;
     min-height: 100%;
-    min-width: 100%;
+    min-width: 1280px;
+    background-color: #EBEFF2;
+    color: #333333;
+    font-size: 14px;
   }
-
+  body,
+  dl,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
   p,
-  label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.5em;
+  form {
+    margin: 0;
   }
+  ol, li, ul {
+    margin: 0;
+    padding: 0;
+  }
+  input,
+  button {
+    outline: none;
+  }
+  hr {
+    display: none;
+  }
+  span {
+    -webkit-appearance: none !important;
+  }
+  li {
+    list-style:none;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button{
+      -webkit-appearance: none !important;
+      margin: 0; 
+  }
+  input[type="number"]{-moz-appearance:textfield;}
 `;
