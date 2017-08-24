@@ -26,6 +26,7 @@
 <dd>install不执行build，</dd>
 <dd>publish 之前执行。</dd>
 <dd>添加了main入口，</dd>
+<dd>.gitignore  删除build的忽略（不删除会导致publish 之后没有build文件）；同时lint:eslint  添加--ignore-pattern build</dd>
 
 
 <dt>webapck</dt>

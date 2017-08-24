@@ -10,22 +10,42 @@
  */
 
 import React, { PureComponent } from 'react';
-import marked from 'marked';
-import InputSearchComCode from '!raw-loader!../../../bin/InputSearchCom';
-import { InputSearchCom } from '../../../bin';
+import CodeExample from 'components/CodeExample';
+import PropTypeDescription from 'components/PropTypeDescription';
+
+import inputSearchComCode from '!raw-loader!../../../bin/InputSearchCom';
+
+import exampleInputCode from '!raw-loader!./ExampleInput';
+import exampleInputOnchangeCode from '!raw-loader!./ExampleInputOnchange';
+import exampleInputOnSubmitCode from '!raw-loader!./ExampleInputSubmit';
+
+import ExampleInput from './ExampleInput';
+import ExampleInputOnchange from './ExampleInputOnchange';
+import ExampleInputOnSubmit from './ExampleInputSubmit';
 
 export default class LibInputComPage extends PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
-    const text = `\`\`\`js
-${InputSearchComCode}
-    \`\`\``;
     return (
       <div>
-        <InputSearchCom value={'here'} placeholder="搜搜" onSearch={(value) => console.log(value)} />
-        <div
-          className="markdown-body"
-          dangerouslySetInnerHTML={{ __html: marked(text) }}
-        />
+        <CodeExample
+          code={exampleInputCode}
+          title="Simple example"
+        >
+          <ExampleInput />
+        </CodeExample>
+        <CodeExample
+          code={exampleInputOnchangeCode}
+          title="example callback change"
+        >
+          <ExampleInputOnchange />
+        </CodeExample>
+        <CodeExample
+          code={exampleInputOnSubmitCode}
+          title="example callback submit"
+        >
+          <ExampleInputOnSubmit />
+        </CodeExample>
+        <PropTypeDescription code={inputSearchComCode} />
       </div>
     );
   }

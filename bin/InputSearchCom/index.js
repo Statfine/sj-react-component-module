@@ -4,8 +4,12 @@
 import React, { PureComponent, PropTypes } from 'react';
 import styled from 'styled-components';
 
+const InputContent = styled.div`
+  display: flex;
+`;
+
 const SearchInput = styled.input`
-  width: 100%;
+  flex-grow: 1;
   border: 1px solid #E3E3E3;
   border-radius: 1px;
   height: 32px;
@@ -21,41 +25,64 @@ const SearchInput = styled.input`
   }
 `;
 
+
 class InputSearchCom extends PureComponent {
   state = {
     value: this.props.value,
   }
 
   handleBack = () => {
-    this.props.onSearch(this.state.value);
+    this.props.onSubmit(this.state.value);
   }
 
   render() {
-    const { placeholder, onSearch } = this.props;
+    const { placeholder, onSubmit, onChange } = this.props;
     const { value } = this.state;
 
     return (
-      <div>
+      <InputContent>
         <SearchInput
           placeholder={placeholder === undefined || placeholder === null ? '搜索' : placeholder}
           value={value}
-          onChange={(e) => { this.setState({ value: e.target.value }); }}
+          onChange={(e) => {
+            const valueC = e.target.value;
+            if (onChange) onChange(valueC);
+            this.setState({ value: valueC });
+          }}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              onSearch(value);
+              onSubmit(value);
             }
           }}
         />
-        <div onClick={() => this.handleBack()}>CLick</div>
-      </div>
+        { onSubmit && <div onClick={() => this.handleBack()}>Submit</div> }
+      </InputContent>
     );
   }
 }
 
+InputSearchCom.defaultProps = {
+  value: '',
+  placeholder: '',
+};
+
 InputSearchCom.propTypes = {
+  /**
+   * value
+   */
   value: PropTypes.string,
+  /**
+   * placeholder
+   */
   placeholder: PropTypes.string,
-  onSearch: PropTypes.func,
+  /**
+   * func onChange
+   */
+  onChange: PropTypes.func,
+  /**
+   * func onSearch
+   */
+  onSubmit: PropTypes.func,
 };
 
 export default InputSearchCom;
